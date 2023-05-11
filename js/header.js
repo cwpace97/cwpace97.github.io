@@ -3,7 +3,7 @@ document.write(
     <header>
         <nav>
             <ul>
-                <li><a href="./home.html">Home</a>
+                <li><a href="./index.html">Home</a>
                 <li><a href="./blog.html">Blog</a></li>
                 </li>
 
