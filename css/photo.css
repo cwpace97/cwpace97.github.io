@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.photo {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.photo img {
+    flex: 1 0 75%;
+    max-width: 75%;
+    margin-right: 2%;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.description {
+    flex: 1 1 18%;
+}
+
+.gallery img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.subtext {
+    color: rgb(145, 145, 145);
+    font-size: 15px;
+    font-style: italic;
+}
