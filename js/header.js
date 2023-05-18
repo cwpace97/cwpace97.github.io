@@ -12,6 +12,7 @@ document.write(
                         <!-- <li><a href="./dashboards/spotify.html">Spotify</a></li> TODO: make this...-->
                         <li><a href="./strava.html">Strava</a></li>
                         <li><a href="./untappd.html">Untappd</a></li>
+                        <li><a href="./golf.html">Golf</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Astronomy</a>
