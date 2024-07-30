@@ -3,6 +3,7 @@ import pandas as pd
 from pandas import json_normalize
 import os
 import urllib3
+import numpy as np
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 #strava vars and tokens
@@ -25,10 +26,14 @@ print("Requesting Token...\n")
 res = requests.post(auth_url, data=header, verify=False)
 access_token = res.json()['access_token']
 header = {'Authorization': 'Bearer ' + access_token}
-param = {'per_page': 200, 'page': 1}
-df = requests.get(activites_url, headers=header, params=param).json()
+activities = pd.DataFrame()
 
-activities = json_normalize(df)
+for i in np.arange(start=1, stop=10):
+    param = {'per_page': 200, 'page': i}
+    print(param)
+    df_temp = json_normalize(requests.get(activites_url, headers=header, params=param).json())
+    if len(df_temp)==0: break
+    activities = pd.concat([activities, df_temp]).reset_index(drop=True)
 
 #Break date into start time and date
 activities['start_date_local'] = pd.to_datetime(activities['start_date_local'])
