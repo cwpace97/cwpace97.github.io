@@ -1,3 +1,4 @@
+import time
 import requests
 import pandas as pd
 import numpy as np
@@ -47,9 +48,12 @@ for i in np.arange(20):
 
         #splitting the beer_style into category then style
         df_temp[['beer.beer_category','beer.beer_subcategory']] = df_temp['beer.beer_style'].str.split('-',expand=True)
-        df = df.append(df_temp)
+        df.append(df_temp)
+        df = pd.concat([df, df_temp]).reset_index(drop=True)
     except:
         print('No Beers in This Batch')
+    finally:
+        time.sleep(5)
 
 df = df.drop_duplicates(subset=['recent_checkin_id'])
 df = df.reset_index(drop=True)
