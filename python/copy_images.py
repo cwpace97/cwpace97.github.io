@@ -13,7 +13,7 @@ def compress_image(img, desired_width):
     return img
 
 def main(argv):
-    path_to_astro = r'E:\FINAL OUTPUTS'
+    path_to_astro = r'C:\Users\cwpac\OneDrive\Documents\Astro Exports\JPGs'
     path_to_web_dir = r'C:\Users\cwpac\OneDrive\Documents\Website\cwpace97.github.io\images\photos'
     try:
         pic_list = glob.glob(f'{path_to_astro}/*.jpg')
